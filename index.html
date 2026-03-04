@@ -420,8 +420,86 @@
       font-weight: 500;
     }
 
+    /* RECRUITMENT SECTION */
+    .recruitment { background: var(--light-bg); }
+    .recruitment-inner { max-width: 860px; margin: 0 auto; }
+    .rec-form { background: var(--navy); padding: 3rem; margin-top: 2.5rem; }
+    .rec-form h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; color: var(--white); margin-bottom: 0.4rem;
+    }
+    .rec-form .rec-sub {
+      font-size: 0.85rem; color: var(--gray); margin-bottom: 2rem;
+    }
+    .rec-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1.2rem; }
+    .rec-group { margin-bottom: 1.2rem; }
+    .rec-group label {
+      display: block; font-size: 0.75rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 6px; font-weight: 600;
+    }
+    .rec-group input, .rec-group select, .rec-group textarea {
+      width: 100%; padding: 12px 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,168,76,0.2);
+      color: var(--white); font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem; outline: none;
+      transition: border-color 0.2s;
+      appearance: none;
+    }
+    .rec-group select option { background: var(--navy-mid); color: var(--white); }
+    .rec-group input::placeholder, .rec-group textarea::placeholder { color: var(--gray); }
+    .rec-group input:focus, .rec-group select:focus, .rec-group textarea:focus { border-color: var(--gold); }
+    .rec-group textarea { height: 100px; resize: vertical; }
+    .file-upload-area {
+      border: 1px dashed rgba(201,168,76,0.4);
+      padding: 1.5rem; text-align: center; cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      position: relative;
+    }
+    .file-upload-area:hover { border-color: var(--gold); background: rgba(201,168,76,0.04); }
+    .file-upload-area input[type="file"] {
+      position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+    }
+    .file-upload-label { font-size: 0.85rem; color: var(--gray); pointer-events: none; }
+    .file-upload-label span { color: var(--gold); font-weight: 600; }
+    .file-name { font-size: 0.8rem; color: var(--gold-light); margin-top: 6px; }
+    .btn-rec {
+      width: 100%; background: var(--gold); color: var(--navy);
+      border: none; padding: 14px; font-size: 0.85rem;
+      font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      cursor: pointer; transition: background 0.2s; margin-top: 0.5rem;
+    }
+    .btn-rec:hover { background: var(--gold-light); }
+    .form-msg { margin-top: 1rem; padding: 12px 16px; border-radius: 2px; font-size: 0.85rem; display: none; }
+    .form-msg.success { background: rgba(100,200,120,0.15); border: 1px solid rgba(100,200,120,0.4); color: #7ee8a2; }
+    .form-msg.error { background: rgba(220,80,80,0.15); border: 1px solid rgba(220,80,80,0.4); color: #f08080; }
+    
+    /* RTC ADDRESS SECTION */
+    .rtc-section { background: var(--navy); }
+    .rtc-inner { max-width: 1100px; margin: 0 auto; }
+    .rtc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-top: 2.5rem; }
+    .rtc-address-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-left: 4px solid var(--gold);
+      padding: 2.5rem;
+    }
+    .rtc-address-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; color: var(--white); margin-bottom: 1.5rem;
+    }
+    .rtc-address-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 1.2rem; }
+    .rtc-address-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+    .rtc-address-text { font-size: 0.92rem; color: rgba(248,249,252,0.75); line-height: 1.6; }
+    .rtc-address-text strong { color: var(--gold); display: block; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3px; }
+    .rtc-address-text a { color: rgba(248,249,252,0.75); text-decoration: none; }
+    .rtc-address-text a:hover { color: var(--gold); }
+    .rtc-info { }
+    .rtc-info p { font-size: 0.95rem; color: rgba(248,249,252,0.65); line-height: 1.8; margin-bottom: 1.5rem; }
+
     /* RESPONSIVE */
     @media (max-width: 900px) {
+      .rtc-grid, .rec-row { grid-template-columns: 1fr; }
       .about-inner, .contact-inner { grid-template-columns: 1fr; }
       .expertise-grid { grid-template-columns: 1fr; }
       .services-list { grid-template-columns: 1fr 1fr; }
@@ -447,6 +525,8 @@
     <li><a href="#about">About</a></li>
     <li><a href="#expertise">Expertise</a></li>
     <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#recruitment">Recruitment</a></li>
+    <li><a href="#rtc">RTC</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="https://www.linkedin.com/in/yashesh-trivedi-66374227a" target="_blank" class="nav-cta">Let's Connect</a>
@@ -677,7 +757,7 @@
         <div class="contact-icon">📧</div>
         <div class="contact-item-text">
           <strong>Email</strong>
-          <a href="mailto:trivediyashesh082@gmail.com">trivediyashesh082@gmail.com</a>
+          <a href="/cdn-cgi/l/email-protection#c8bcbaa1beadaca1b1a9bba0adbba0f8f0fa88afa5a9a1a4e6aba7a5"><span class="__cf_email__" data-cfemail="a1d5d3c8d7c4c5c8d8c0d2c9c4d2c9919993e1c6ccc0c8cd8fc2cecc">[email&#160;protected]</span></a>
         </div>
       </div>
       <div class="contact-item">
@@ -706,18 +786,214 @@
     <div class="contact-form">
       <h3>Send a Message</h3>
       <div class="form-group">
-        <input type="text" placeholder="Your Full Name" />
+        <input type="text" id="contact-name" placeholder="Your Full Name" />
       </div>
       <div class="form-group">
-        <input type="email" placeholder="Your Email Address" />
+        <input type="email" id="contact-email" placeholder="Your Email Address" />
       </div>
       <div class="form-group">
-        <input type="text" placeholder="Subject (Recruitment / Industrial / Other)" />
+        <input type="text" id="contact-subject" placeholder="Subject (Recruitment / Industrial / Other)" />
       </div>
       <div class="form-group">
-        <textarea placeholder="Your message..."></textarea>
+        <textarea id="contact-message" placeholder="Your message..."></textarea>
       </div>
-      <button class="btn-form">Send Message →</button>
+      <button class="btn-form" onclick="sendContactForm()">Send Message →</button>
+      <div class="form-msg" id="contact-msg"></div>
+    </div>
+  </div>
+</section>
+
+<!-- RECRUITMENT SECTION -->
+<section class="recruitment" id="recruitment">
+  <div class="recruitment-inner">
+    <div class="section-label">Career Opportunities</div>
+    <h2 class="section-title">Submit Your Application</h2>
+    <div class="gold-line"></div>
+    <p style="font-size:0.97rem; color:#3a4a63; line-height:1.8; max-width:680px">
+      Looking for an IT role in the US? Based in India or USA? Submit your details and resume below and I will reach out with matching opportunities. We hire across all IT backgrounds and employment types (W2 · C2C · 1099).
+    </p>
+
+    <div class="rec-form">
+      <h3>Apply Now</h3>
+      <p class="rec-sub">Fields marked * are required. Your resume goes directly to trivediyashesh082@gmail.com</p>
+
+      <div class="rec-row">
+        <div class="rec-group">
+          <label>Full Name *</label>
+          <input type="text" id="rec-name" placeholder="Your full name" />
+        </div>
+        <div class="rec-group">
+          <label>Email Address *</label>
+          <input type="email" id="rec-email" placeholder="your@email.com" />
+        </div>
+      </div>
+
+      <div class="rec-row">
+        <div class="rec-group">
+          <label>Phone Number</label>
+          <input type="tel" id="rec-phone" placeholder="+1 (555) 000-0000" />
+        </div>
+        <div class="rec-group">
+          <label>Location *</label>
+          <select id="rec-location">
+            <option value="">— Select Location —</option>
+            <option value="India">🇮🇳 India</option>
+            <option value="USA">🇺🇸 USA</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="rec-row">
+        <div class="rec-group">
+          <label>Background / Domain *</label>
+          <select id="rec-background">
+            <option value="">— Select Background —</option>
+            <optgroup label="IT Roles">
+              <option value="Software Engineer">Software Engineer</option>
+              <option value="Full Stack Developer">Full Stack Developer</option>
+              <option value="Frontend Developer">Frontend Developer</option>
+              <option value="Backend Developer">Backend Developer</option>
+              <option value="Data Engineer">Data Engineer</option>
+              <option value="Data Scientist / ML">Data Scientist / ML</option>
+              <option value="DevOps / Cloud Engineer">DevOps / Cloud Engineer</option>
+              <option value="QA / Test Engineer">QA / Test Engineer</option>
+              <option value="Business Analyst">Business Analyst</option>
+              <option value="Project Manager">Project Manager</option>
+              <option value="Scrum Master">Scrum Master</option>
+              <option value="Salesforce Developer">Salesforce Developer</option>
+              <option value="SAP Consultant">SAP Consultant</option>
+              <option value="Cybersecurity">Cybersecurity</option>
+              <option value="Network Engineer">Network Engineer</option>
+              <option value="IT Support">IT Support</option>
+            </optgroup>
+            <optgroup label="Non-IT Roles">
+              <option value="Finance / Accounting">Finance / Accounting</option>
+              <option value="Healthcare / Medical">Healthcare / Medical</option>
+              <option value="Engineering (Non-IT)">Engineering (Non-IT)</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Sales">Sales</option>
+              <option value="Other">Other</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="rec-group">
+          <label>Employment Type</label>
+          <select id="rec-emptype">
+            <option value="">— Select Type —</option>
+            <option value="W2">W2</option>
+            <option value="C2C">C2C (Corp to Corp)</option>
+            <option value="1099">1099</option>
+            <option value="Full-Time">Full-Time</option>
+            <option value="Part-Time">Part-Time</option>
+            <option value="Contract">Contract</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="rec-group">
+        <label>Qualification / Skills *</label>
+        <input type="text" id="rec-qualification" placeholder="e.g. B.Tech CS, AWS Certified, 5 yrs React, MBA Finance..." />
+      </div>
+
+      <div class="rec-group">
+        <label>Years of Experience</label>
+        <select id="rec-exp">
+          <option value="">— Select —</option>
+          <option value="Fresher (0-1 yr)">Fresher (0–1 yr)</option>
+          <option value="1-3 years">1–3 years</option>
+          <option value="3-5 years">3–5 years</option>
+          <option value="5-8 years">5–8 years</option>
+          <option value="8-12 years">8–12 years</option>
+          <option value="12+ years">12+ years</option>
+        </select>
+      </div>
+
+      <div class="rec-group">
+        <label>Message / Cover Note</label>
+        <textarea id="rec-message" placeholder="Tell me about yourself, your current situation, and the kind of role you're looking for..."></textarea>
+      </div>
+
+      <div class="rec-group">
+        <label>Upload Resume / CV (PDF, DOC, DOCX — max 5MB)</label>
+        <div class="file-upload-area" onclick="document.getElementById('rec-file').click()">
+          <input type="file" id="rec-file" accept=".pdf,.doc,.docx" onchange="showFileName(this)" style="display:none" />
+          <div class="file-upload-label">📎 <span>Click to attach your resume</span> or drag & drop here</div>
+          <div class="file-name" id="file-name-display"></div>
+        </div>
+      </div>
+
+      <button class="btn-rec" onclick="sendRecruitmentForm()">Submit Application →</button>
+      <div class="form-msg" id="rec-msg"></div>
+    </div>
+  </div>
+</section>
+
+<!-- RADHEY TRADING COMPANY SECTION -->
+<section class="rtc-section" id="rtc">
+  <div class="rtc-inner">
+    <div class="section-label" style="color:var(--gold)">Industrial Trading</div>
+    <h2 class="section-title" style="color:var(--white)">Radhey Trading Company</h2>
+    <div class="gold-line"></div>
+    <div class="rtc-grid">
+      <div class="rtc-info">
+        <p>
+          Radhey Trading Company (RTC) is an industrial distribution firm based in Vadodara, Gujarat — supplying high-quality welding consumables, grinding and cutting discs, and power tools to B2B buyers and dealer networks across Gujarat and beyond.
+        </p>
+        <p>
+          We work with manufacturers, contractors, and industrial buyers, offering competitive pricing, reliable supply chains, and strong after-sales support. Whether you're looking to partner as a dealer or source industrial products in bulk, RTC is your trusted partner.
+        </p>
+        <div class="about-tags" style="margin-top:1rem">
+          <span class="tag" style="color:var(--gold-light); border-color:rgba(201,168,76,0.3)">Welding Consumables</span>
+          <span class="tag" style="color:var(--gold-light); border-color:rgba(201,168,76,0.3)">Cutting Discs</span>
+          <span class="tag" style="color:var(--gold-light); border-color:rgba(201,168,76,0.3)">Grinding Wheels</span>
+          <span class="tag" style="color:var(--gold-light); border-color:rgba(201,168,76,0.3)">Power Tools</span>
+          <span class="tag" style="color:var(--gold-light); border-color:rgba(201,168,76,0.3)">B2B Supply</span>
+          <span class="tag" style="color:var(--gold-light); border-color:rgba(201,168,76,0.3)">Dealer Network</span>
+        </div>
+      </div>
+      <div>
+        <div class="rtc-address-card">
+          <h4>📍 Our Address</h4>
+          <div class="rtc-address-item">
+            <div class="rtc-address-icon">🏪</div>
+            <div class="rtc-address-text">
+              <strong>Shop Address</strong>
+              Shop No. 22, Shiv Avenue,<br>
+              B/H Sahyog Hotel – GIDC,<br>
+              Por, Vadodara – Gujarat<br>
+              India
+            </div>
+          </div>
+          <div class="rtc-address-item">
+            <div class="rtc-address-icon">📱</div>
+            <div class="rtc-address-text">
+              <strong>Mobile / WhatsApp</strong>
+              <a href="tel:+918849440117">+91 88494 40117</a>
+            </div>
+          </div>
+          <div class="rtc-address-item">
+            <div class="rtc-address-icon">📱</div>
+            <div class="rtc-address-text">
+              <strong>Mobile</strong>
+              <a href="tel:+919925026283">+91 99250 26283</a>
+            </div>
+          </div>
+          <div class="rtc-address-item">
+            <div class="rtc-address-icon">📧</div>
+            <div class="rtc-address-text">
+              <strong>Email</strong>
+              <a href="mailto:trivediyashesh082@gmail.com">trivediyashesh082@gmail.com</a>
+            </div>
+          </div>
+          <div class="rtc-address-item">
+            <div class="rtc-address-icon">🕐</div>
+            <div class="rtc-address-text">
+              <strong>Business Hours</strong>
+              Mon – Sat: 9:00 AM – 7:00 PM IST
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -746,20 +1022,143 @@
   <div class="footer-links">
     <a href="#about">About</a>
     <a href="#expertise">Expertise</a>
+    <a href="#recruitment">Recruitment</a>
+    <a href="#rtc">RTC</a>
     <a href="#contact">Contact</a>
     <a href="https://www.linkedin.com/in/yashesh-trivedi-66374227a" target="_blank">LinkedIn</a>
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'translateY(0)';
-      }
-    });
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('fade-up'); observer.unobserve(e.target); } });
   }, { threshold: 0.1 });
+  document.querySelectorAll('.ach-card, .service-item, .expertise-card').forEach(el => observer.observe(el));
 
-  document.querySelectorAll('.about-inner > *, .ach-card, .expertise-card, .service-item,
+  // Show selected file name
+  function showFileName(input) {
+    const display = document.getElementById('file-name-display');
+    display.textContent = input.files[0] ? '✓ ' + input.files[0].name : '';
+  }
+
+  // Show message helper
+  function showMsg(id, type, text) {
+    const el = document.getElementById(id);
+    el.className = 'form-msg ' + type;
+    el.textContent = text;
+    el.style.display = 'block';
+    setTimeout(() => { el.style.display = 'none'; }, 6000);
+  }
+
+  // CONTACT FORM — sends to trivediyashesh082@gmail.com via FormSubmit
+  async function sendContactForm() {
+    const name    = document.getElementById('contact-name').value.trim();
+    const email   = document.getElementById('contact-email').value.trim();
+    const subject = document.getElementById('contact-subject').value.trim();
+    const message = document.getElementById('contact-message').value.trim();
+
+    if (!name || !email || !message) {
+      return showMsg('contact-msg', 'error', 'Please fill in Name, Email, and Message.');
+    }
+
+    const btn = document.querySelector('.btn-form');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('_subject', subject || 'New message from website – ' + name);
+    formData.append('message', message);
+    formData.append('_captcha', 'false');
+    formData.append('_template', 'table');
+
+    try {
+      const res = await fetch('https://formsubmit.co/trivediyashesh082@gmail.com', {
+        method: 'POST', body: formData, headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        showMsg('contact-msg', 'success', '✓ Message sent! I\'ll get back to you soon.');
+        document.getElementById('contact-name').value = '';
+        document.getElementById('contact-email').value = '';
+        document.getElementById('contact-subject').value = '';
+        document.getElementById('contact-message').value = '';
+      } else {
+        showMsg('contact-msg', 'error', 'Something went wrong. Please email directly: trivediyashesh082@gmail.com');
+      }
+    } catch (e) {
+      showMsg('contact-msg', 'error', 'Network error. Please email: trivediyashesh082@gmail.com');
+    }
+    btn.textContent = 'Send Message →';
+    btn.disabled = false;
+  }
+
+  // RECRUITMENT FORM — sends resume + details to trivediyashesh082@gmail.com
+  async function sendRecruitmentForm() {
+    const name     = document.getElementById('rec-name').value.trim();
+    const email    = document.getElementById('rec-email').value.trim();
+    const phone    = document.getElementById('rec-phone').value.trim();
+    const location = document.getElementById('rec-location').value;
+    const bg       = document.getElementById('rec-background').value;
+    const emptype  = document.getElementById('rec-emptype').value;
+    const qual     = document.getElementById('rec-qualification').value.trim();
+    const exp      = document.getElementById('rec-exp').value;
+    const message  = document.getElementById('rec-message').value.trim();
+    const fileInput= document.getElementById('rec-file');
+
+    if (!name || !email || !location || !bg || !qual) {
+      return showMsg('rec-msg', 'error', 'Please fill in all required (*) fields.');
+    }
+
+    const btn = document.querySelector('.btn-rec');
+    btn.textContent = 'Submitting…';
+    btn.disabled = true;
+
+    const formData = new FormData();
+    formData.append('_subject', `New Application: ${bg} from ${location} – ${name}`);
+    formData.append('_captcha', 'false');
+    formData.append('_template', 'table');
+    formData.append('Full Name', name);
+    formData.append('Email', email);
+    formData.append('Phone', phone || 'Not provided');
+    formData.append('Location', location);
+    formData.append('Background / Domain', bg);
+    formData.append('Employment Type', emptype || 'Not specified');
+    formData.append('Qualification & Skills', qual);
+    formData.append('Experience', exp || 'Not specified');
+    formData.append('Message', message || 'No message provided');
+
+    if (fileInput.files[0]) {
+      formData.append('attachment', fileInput.files[0]);
+    }
+
+    try {
+      const res = await fetch('https://formsubmit.co/trivediyashesh082@gmail.com', {
+        method: 'POST', body: formData, headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        showMsg('rec-msg', 'success', '✓ Application submitted successfully! You will be contacted soon.');
+        document.getElementById('rec-name').value = '';
+        document.getElementById('rec-email').value = '';
+        document.getElementById('rec-phone').value = '';
+        document.getElementById('rec-location').value = '';
+        document.getElementById('rec-background').value = '';
+        document.getElementById('rec-emptype').value = '';
+        document.getElementById('rec-qualification').value = '';
+        document.getElementById('rec-exp').value = '';
+        document.getElementById('rec-message').value = '';
+        fileInput.value = '';
+        document.getElementById('file-name-display').textContent = '';
+      } else {
+        showMsg('rec-msg', 'error', 'Something went wrong. Please email: trivediyashesh082@gmail.com');
+      }
+    } catch (e) {
+      showMsg('rec-msg', 'error', 'Network error. Please email: trivediyashesh082@gmail.com');
+    }
+    btn.textContent = 'Submit Application →';
+    btn.disabled = false;
+  }
+</script>
+</body>
+</html>
